@@ -4,6 +4,8 @@
 
 ros::NodeHandle nh;
 geometry_msgs::Vector3 gripperPosition_message;
+std_msgs::Int16 gripperTask;
+std_msgs::String gripper_command;
 
 
 STEPPER_CONTROL** stepperMotorROS = new STEPPER_CONTROL*[3];
@@ -30,9 +32,27 @@ void XYZrosGetGripperPositionCommand (const geometry_msgs::Vector3 &msg){
   stepperMotorROS[2]->setDestinationStep(msg.z); 
 }
 
+void rosGetGripperTask (const std_msgs::Int16 &msg){
+  int received_value = msg.data;
+  if (received_value == 1){
+     stepperMotorROS[2]->finishMoved = false;
+     stepperMotorROS[2]->move2pick_mode = true;
+//     stepperMotorROS[0]->setDestinationStep(150);
+//     stepperMotorROS[2]->update();/
+  }
+  else{
+    stepperMotorROS[2]->finishMoved = false;
+    stepperMotorROS[2]->move2place_mode = true;
+//    stepperMotorROS[0]->setDestinationStep(40);
+//    stepperMotorROS[2]->update();/
+  }
+}
+
 ros::Publisher pub("GripperPosition", &gripperPosition_message);
+ros::Publisher pub2("GripperStatus", &gripper_command);
 ros::Subscriber<geometry_msgs::Vector3> sub("commanderGripperPosition", &rosGetGripperPositionCommand);
 ros::Subscriber<geometry_msgs::Vector3> sub2("XYZcommanderGripperPosition", &XYZrosGetGripperPositionCommand);
+ros::Subscriber<std_msgs::Int16> sub3("GripperState", &rosGetGripperTask);
 
 void rosSetZero(const std_srvs::Empty::Request & req, std_srvs::Empty::Response & res){
   stepperMotorROS[0]->setZero();
@@ -46,18 +66,26 @@ void rosSetup(STEPPER_CONTROL ** stepper_control) {
   nh.initNode();
   nh.subscribe(sub);
   nh.subscribe(sub2);
+  nh.subscribe(sub3);
   nh.advertise(pub);
+  nh.advertise(pub2);
   nh.advertiseService(server_zero);
   stepperMotorROS =  stepper_control;
 }
 
 void rosSendGripperPosition(STEPPER_CONTROL ** stepper_control) {
-  gripperPosition_message.x = digitalRead(stepper_control[0]->limPin);
-  gripperPosition_message.y = stepper_control[2]->zero_mode;
-  gripperPosition_message.z = digitalRead(stepper_control[2]->limPin);
+  gripperPosition_message.x = stepper_control[2]->move2pick_mode;
+  gripperPosition_message.y = stepper_control[2]->move2place_mode;
+  gripperPosition_message.z = stepper_control[2]->finishMoved;
   pub.publish(&gripperPosition_message);
   char report[99];
 //  sprintf(report, "Sending ros, (%.2f, %.2f, %.2f", gripperPosition_message.x, gripperPosition_message.y, gripperPosition_message.z);
 //  Serial.println(report);
   nh.spinOnce();  
+}
+
+void rosSendGripperCommand(String state){
+  gripper_command.data = state.c_str();
+  pub2.publish(&gripper_command);
+  
 }

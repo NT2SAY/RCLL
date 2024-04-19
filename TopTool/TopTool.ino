@@ -29,12 +29,25 @@ void setup() {
 }
 long prevTime = 0;
 void loop() {
-  
+
   for (int i = 0; i < 3; i++) {
-    if((i != 0) && (stepperMotor[i-1]->is_xyz)){
+    if ((i != 0) && (stepperMotor[i - 1]->is_xyz)) {
       break;
     }
     stepperMotor[i]->update();
+  }
+  if ((stepperMotor[0]->finishMoved) && (stepperMotor[1]->finishMoved) && (stepperMotor[2]->finishMoved)) {
+    if (stepperMotor[2]->move2pick_mode) {
+      stepperMotor[2]->move2pick_mode = false;
+      String state = "CLOSE";
+      rosSendGripperCommand(state);
+      nh.spinOnce();
+    } else if (stepperMotor[2]->move2place_mode) {
+      stepperMotor[2]->move2place_mode = false;
+      String state = "OPEN";
+      rosSendGripperCommand(state);
+      nh.spinOnce();
+    }
   }
   if (millis() - prevTime > 500) {
     rosSendGripperPosition(stepperMotor);

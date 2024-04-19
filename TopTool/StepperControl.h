@@ -71,8 +71,12 @@ extern motor StepperMotor[3];
       bool pulseState;
       bool zero_mode;
       bool is_xyz;
+      bool move2pick_mode;
+      bool move2place_mode;
+      bool finishMoved;
 
       void setZero();
+      void setMove2Pick();
       void update();
       void moveMotor();
       void setDestinationStep(float _destiantionPoint);

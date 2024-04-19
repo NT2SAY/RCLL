@@ -12,6 +12,9 @@ STEPPER_CONTROL::STEPPER_CONTROL(int _dirPin, int _pulPin, int _limPin, bool _fo
   pulsePerRev = _pulsePerRev;
   homeStep = (_homePoint/pointPerRev)*pulsePerRev;
   is_xyz = false;
+  move2pick_mode = false;
+  move2place_mode = false;
+  finishMoved = false;
   pinMode(dirPin, OUTPUT);
   pinMode(pulPin, OUTPUT);
   pinMode(limPin, INPUT_PULLUP);
@@ -28,6 +31,10 @@ float STEPPER_CONTROL::getCurrentPoint(){
 
 void STEPPER_CONTROL::setZero(){
   zero_mode = true;
+}
+
+void STEPPER_CONTROL::setMove2Pick(){
+  move2pick_mode = true;
 }
 
 void STEPPER_CONTROL::update(){
@@ -47,6 +54,7 @@ void STEPPER_CONTROL::update(){
 
 void STEPPER_CONTROL::moveMotor(){
   if(currentStep > destinationStep){
+    finishMoved = false;
     digitalWrite(dirPin, !forDir);
     if(pulseState){pulseState = 0;
       digitalWrite(pulPin, pulseState);
@@ -58,6 +66,7 @@ void STEPPER_CONTROL::moveMotor(){
     }
   }
   else if(currentStep < destinationStep){
+    finishMoved = false;
     digitalWrite(dirPin, forDir);
     if(pulseState){pulseState = 0;
       digitalWrite(pulPin, pulseState);
@@ -70,6 +79,7 @@ void STEPPER_CONTROL::moveMotor(){
   }
   else{
     is_xyz = false;
+    finishMoved = true;
   }
 }
 
