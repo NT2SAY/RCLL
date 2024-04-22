@@ -1,0 +1,1 @@
+/home/rai/raibocup/raibo_ws/devel/.private/ired_msgs/lib/python3/dist-packages/ired_msgs/__init__.py

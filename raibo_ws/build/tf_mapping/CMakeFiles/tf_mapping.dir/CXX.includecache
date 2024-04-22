@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/rai/raibocup/raibo_ws/src/tf_mapping/include/tf_mapping/helper.h
+iostream
+-
+string
+-
+
+/home/rai/raibocup/raibo_ws/src/tf_mapping/src/helper.cpp
+tf_mapping/helper.h
+-
+

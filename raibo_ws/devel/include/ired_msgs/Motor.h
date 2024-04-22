@@ -1,0 +1,1 @@
+/home/rai/raibocup/raibo_ws/devel/.private/ired_msgs/include/ired_msgs/Motor.h

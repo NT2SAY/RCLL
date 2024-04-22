@@ -1,0 +1,1 @@
+/home/rai/raibocup/raibo_ws/devel/.private/ired_msgs/share/common-lisp/ros/ired_msgs/msg/_package_Mode.lisp

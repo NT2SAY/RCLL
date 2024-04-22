@@ -1,0 +1,8 @@
+prefix=/home/rai/raibocup/raibo_ws/install
+
+Name: gripper_position_msg
+Description: Description of gripper_position_msg
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

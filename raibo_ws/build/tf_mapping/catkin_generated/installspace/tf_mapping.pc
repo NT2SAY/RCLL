@@ -1,0 +1,8 @@
+prefix=/home/rai/raibocup/raibo_ws/install
+
+Name: tf_mapping
+Description: Description of tf_mapping
+Version: 1.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -ltf_mapping
+Requires: roscpp tf std_msgs geometry_msgs visualization_msgs sensor_msgs tf2_msgs aruco

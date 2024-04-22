@@ -1,0 +1,1 @@
+/home/rai/raibocup/raibo_ws/devel/.private/img_msg/lib/pkgconfig/img_msg.pc

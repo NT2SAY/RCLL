@@ -1,0 +1,6 @@
+<!-- Run the aruco_detect node -->
+<launch>
+  
+  <include file="$(find image_util)/launch/aruco_detect.launch" />
+  <include file="$(find image_util)/launch/pointclound2heightmap.launch" />
+</launch>

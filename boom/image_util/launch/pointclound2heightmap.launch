@@ -1,0 +1,21 @@
+<!-- Run the aruco_detect node -->
+<launch>
+  <node name="tf_transform_cloud"
+        pkg="nodelet" type="nodelet"
+        args="standalone jsk_pcl_utils/TfTransformCloud">
+    <remap from="~input" to="/camera/depth_registered/points"/>
+    <rosparam>
+      target_frame_id: tray_frame
+    </rosparam>
+  </node>
+
+
+  <node type="heightmap_convertor.py" pkg="image_util" name="heightmap_convertor" output="screen" respawn="false">
+    
+  </node>
+
+
+  
+</launch>
+
+

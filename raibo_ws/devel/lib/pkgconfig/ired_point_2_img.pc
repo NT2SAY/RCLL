@@ -1,0 +1,1 @@
+/home/rai/raibocup/raibo_ws/devel/.private/ired_point_2_img/lib/pkgconfig/ired_point_2_img.pc

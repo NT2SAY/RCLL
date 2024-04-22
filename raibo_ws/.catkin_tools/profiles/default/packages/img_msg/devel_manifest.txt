@@ -1,0 +1,5 @@
+img_msg
+/home/rai/raibocup/raibo_ws/devel/.private/img_msg/cmake.lock /home/rai/raibocup/raibo_ws/devel/./cmake.lock
+/home/rai/raibocup/raibo_ws/devel/.private/img_msg/lib/pkgconfig/img_msg.pc /home/rai/raibocup/raibo_ws/devel/lib/pkgconfig/img_msg.pc
+/home/rai/raibocup/raibo_ws/devel/.private/img_msg/share/img_msg/cmake/img_msgConfig-version.cmake /home/rai/raibocup/raibo_ws/devel/share/img_msg/cmake/img_msgConfig-version.cmake
+/home/rai/raibocup/raibo_ws/devel/.private/img_msg/share/img_msg/cmake/img_msgConfig.cmake /home/rai/raibocup/raibo_ws/devel/share/img_msg/cmake/img_msgConfig.cmake

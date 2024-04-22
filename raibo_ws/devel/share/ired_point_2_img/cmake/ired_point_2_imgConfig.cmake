@@ -1,0 +1,1 @@
+/home/rai/raibocup/raibo_ws/devel/.private/ired_point_2_img/share/ired_point_2_img/cmake/ired_point_2_imgConfig.cmake

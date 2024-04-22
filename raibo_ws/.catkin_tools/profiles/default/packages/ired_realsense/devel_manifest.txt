@@ -1,0 +1,5 @@
+ired_realsense
+/home/rai/raibocup/raibo_ws/devel/.private/ired_realsense/cmake.lock /home/rai/raibocup/raibo_ws/devel/./cmake.lock
+/home/rai/raibocup/raibo_ws/devel/.private/ired_realsense/lib/pkgconfig/ired_realsense.pc /home/rai/raibocup/raibo_ws/devel/lib/pkgconfig/ired_realsense.pc
+/home/rai/raibocup/raibo_ws/devel/.private/ired_realsense/share/ired_realsense/cmake/ired_realsenseConfig-version.cmake /home/rai/raibocup/raibo_ws/devel/share/ired_realsense/cmake/ired_realsenseConfig-version.cmake
+/home/rai/raibocup/raibo_ws/devel/.private/ired_realsense/share/ired_realsense/cmake/ired_realsenseConfig.cmake /home/rai/raibocup/raibo_ws/devel/share/ired_realsense/cmake/ired_realsenseConfig.cmake

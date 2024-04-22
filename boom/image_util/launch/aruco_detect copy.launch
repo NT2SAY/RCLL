@@ -1,0 +1,37 @@
+<!-- Run the aruco_detect node -->
+<launch>
+  <!-- namespace for camera input -->
+  <arg name="camera" default="/camera/color"/>
+  <arg name="image" default="image_raw"/>
+  <arg name="transport" default="compressed"/>
+  <arg name="fiducial_len" default="0.058"/>
+  <arg name="dictionary" default="6"/>
+  <arg name="do_pose_estimation" default="true"/>
+  <!-- If vis_msgs set to true, pose estimation will be published with ROS standard vision_msgs -->
+  <arg name="vis_msgs" default="false"/>
+  <arg name="ignore_fiducials" default="0-3, 5-10" />
+  <arg name="fiducial_len_override" default="" />
+  <arg name="verbose" default="false"/>
+
+  <node pkg="aruco_detect" name="aruco_detect"
+    type="aruco_detect" output="screen" respawn="false">
+    <param name="image_transport" value="$(arg transport)"/>
+    <param name="publish_images" value="true" />
+    <param name="fiducial_len" value="$(arg fiducial_len)"/>
+    <param name="dictionary" value="$(arg dictionary)"/>
+    <param name="do_pose_estimation" value="$(arg do_pose_estimation)"/>
+    <param name="vis_msgs" value="$(arg vis_msgs)"/>
+    <param name="ignore_fiducials" value="$(arg ignore_fiducials)"/>
+    <param name="fiducial_len_override" value="$(arg fiducial_len_override)"/>
+    <param name="verbose" value="$(arg verbose)"/>
+    <remap from="camera/compressed" 
+        to="$(arg camera)/$(arg image)/$(arg transport)"/>
+    <remap from="camera_info" to="$(arg camera)/camera_info"/>
+  </node>
+
+  <node pkg="tf2_ros" type="static_transform_publisher" name="aruco_center_tray_tf"
+      args="0.165 0.0 -0.048 3.14 0 0 fiducial_4 tray_from_aruco" />
+
+  <node pkg="image_util" type="tray_tf.py" name="tray_tf" output="screen" respawn="true"/>
+  
+</launch>

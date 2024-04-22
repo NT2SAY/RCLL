@@ -1,0 +1,8 @@
+prefix=/home/rai/raibocup/raibo_ws/devel/.private/ired_point_2_img
+
+Name: ired_point_2_img
+Description: Description of ired_point_2_img
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

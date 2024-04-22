@@ -1,0 +1,1 @@
+/home/rai/raibocup/raibo_ws/devel/.private/rosserial_arduino/share/gennodejs/ros/rosserial_arduino/msg/Adc.js

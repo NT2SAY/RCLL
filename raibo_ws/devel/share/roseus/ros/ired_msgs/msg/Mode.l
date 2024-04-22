@@ -1,0 +1,1 @@
+/home/rai/raibocup/raibo_ws/devel/.private/ired_msgs/share/roseus/ros/ired_msgs/msg/Mode.l

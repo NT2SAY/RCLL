@@ -1,0 +1,1 @@
+/home/rai/raibocup/raibo_ws/devel/.private/rosserial_client/lib/rosserial_client/make_library.py

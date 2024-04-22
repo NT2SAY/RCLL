@@ -1,0 +1,8 @@
+prefix=/home/rai/raibocup/raibo_ws/devel/.private/img_msg
+
+Name: img_msg
+Description: Description of img_msg
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

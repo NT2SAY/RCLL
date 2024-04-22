@@ -1,0 +1,8 @@
+prefix=/home/rai/raibocup/raibo_ws/devel/.private/ired_realsense
+
+Name: ired_realsense
+Description: Description of ired_realsense
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

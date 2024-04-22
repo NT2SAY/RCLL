@@ -1,0 +1,1 @@
+/home/rai/raibocup/raibo_ws/devel/.private/gripper_position_msg/share/gripper_position_msg/cmake/gripper_position_msgConfig-version.cmake

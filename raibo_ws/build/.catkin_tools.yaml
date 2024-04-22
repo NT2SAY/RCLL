@@ -1,0 +1,6 @@
+devel_space: /home/rai/raibocup/raibo_ws/devel
+install: false
+install_space: /home/rai/raibocup/raibo_ws/install
+profile: default
+source_space: /home/rai/raibocup/raibo_ws/src
+workspace: /home/rai/raibocup/raibo_ws

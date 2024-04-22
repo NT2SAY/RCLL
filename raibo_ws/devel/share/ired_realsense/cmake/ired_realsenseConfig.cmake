@@ -1,0 +1,1 @@
+/home/rai/raibocup/raibo_ws/devel/.private/ired_realsense/share/ired_realsense/cmake/ired_realsenseConfig.cmake

@@ -1,0 +1,1 @@
+/home/rai/raibocup/raibo_ws/devel/.private/gripper_position_msg/lib/pkgconfig/gripper_position_msg.pc

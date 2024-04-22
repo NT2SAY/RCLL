@@ -1,0 +1,8 @@
+prefix=/home/rai/raibocup/raibo_ws/install
+
+Name: toptool_cmd
+Description: Description of toptool_cmd
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -1,0 +1,5 @@
+Symlinking /home/rai/raibocup/raibo_ws/devel/lib/libtf_mapping.so
+Symlinking /home/rai/raibocup/raibo_ws/devel/lib/pkgconfig/tf_mapping.pc
+Symlinking /home/rai/raibocup/raibo_ws/devel/lib/tf_mapping/tf_mapping_node
+Symlinking /home/rai/raibocup/raibo_ws/devel/share/tf_mapping/cmake/tf_mappingConfig.cmake
+Symlinking /home/rai/raibocup/raibo_ws/devel/share/tf_mapping/cmake/tf_mappingConfig-version.cmake
